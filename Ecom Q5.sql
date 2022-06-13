@@ -1,0 +1,5 @@
+SELECT * FROM Supplier
+WHERE SUPP_ID IN ( SELECT SUPP_ID FROM Supplier_pricing
+      GROUP BY SUPP_ID
+      HAVING COUNT(DISTINCT PRO_ID) > 1
+     );

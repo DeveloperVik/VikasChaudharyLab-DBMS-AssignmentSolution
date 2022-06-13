@@ -1,0 +1,4 @@
+SELECT CUS_GENDER AS `Gender`, COUNT(CUS_GENDER) AS `no_of_customers` FROM Customer
+LEFT JOIN `Order` ON Customer.CUS_ID = `Order`.CUS_ID
+   WHERE ORD_AMOUNT >= 3000
+   GROUP BY CUS_GENDER;
